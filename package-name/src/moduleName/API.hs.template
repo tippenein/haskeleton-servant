@@ -1,0 +1,21 @@
+{-# LANGUAGE DataKinds     #-}
+{-# LANGUAGE TypeOperators #-}
+
+module ${moduleName}.API () where
+
+import Data.Proxy
+import Servant.API
+import Shifts.Types
+
+shiftsAPI :: Proxy ShiftsAPI
+shiftsAPI = Proxy
+
+type ShiftsAPI =
+       ListThings
+  :<|> ShowThing
+
+-- separate definitions of each route will go here
+-- for example:
+--   type ListThings = "things"
+--     :> QueryParam "someBool" Bool
+--     :> Get '[JSON] Thing

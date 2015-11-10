@@ -1,0 +1,25 @@
+{-# LANGUAGE DeriveAnyClass    #-}
+{-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE OverloadedStrings #-}
+
+module ${moduleName}.Types
+  () where
+
+import Data.Aeson
+import Data.Text
+import GHC.Generics
+
+-- data Thing = Thing { name :: Text }
+--   deriving (Show, Eq, ToJSON, FromJSON, Generic)
+
+
+-- | generally useful stuff day parser for json objects
+-- parseDate :: String -> Day
+-- parseDate = parseTimeOrError True defaultTimeLocale "%Y-%m-%d"
+
+-- instance FromJSON Day where
+--   parseJSON (Object v) = liftM parseDate (v .: "date")
+
+-- instance ToJSON Day where
+--   toJSON = toJSON . showGregorian
+
