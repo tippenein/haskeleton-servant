@@ -5,12 +5,12 @@ module ${moduleName}.API () where
 
 import Data.Proxy
 import Servant.API
-import Shifts.Types
+import ${moduleName}.Types
 
-shiftsAPI :: Proxy ShiftsAPI
-shiftsAPI = Proxy
+thingAPI :: Proxy ShiftsAPI
+thingAPI = Proxy
 
-type ShiftsAPI =
+type ThingAPI =
        ListThings
   :<|> ShowThing
 

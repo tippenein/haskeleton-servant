@@ -10,6 +10,9 @@ import Servant
 import ${moduleName}.API as API
 import ${moduleName}.Types
 
+-- | helper type for handling the default servant response
+data Handler a = EitherT ServantErr IO a
+
 server :: Server TheAPI
 server = undefined --the definition of handlers
 
