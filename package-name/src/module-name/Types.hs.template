@@ -13,7 +13,7 @@ import GHC.Generics
 --   deriving (Show, Eq, ToJSON, FromJSON, Generic)
 
 
--- | generally useful stuff day parser for json objects
+-- | generally useful stuff: day parser for json objects
 -- parseDate :: String -> Day
 -- parseDate = parseTimeOrError True defaultTimeLocale "%Y-%m-%d"
 

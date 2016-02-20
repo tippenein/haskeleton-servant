@@ -5,19 +5,22 @@ import Control.Monad.Trans.Either
 import Data.Text
 import Network.Wai
 import Network.Wai.Handler.Warp
+import Network.Wai.Middleware.RequestLogger (logStdout)
 import Servant
 
 import ${moduleName}.API as API
 import ${moduleName}.Types
 
 -- | helper type for handling the default servant response
-data Handler a = EitherT ServantErr IO a
+type Handler a = EitherT ServantErr IO a
 
 server :: Server TheAPI
 server = undefined --the definition of handlers
 
+middlewares = logStdout
+
 app :: Application
-app = serve API.theAPI server
+app = middlewares $ serve API.theAPI server
 
 runServer :: Port -> IO ()
 runServer port = run port app
